@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Vazir', 'Aviny', 'BYekan',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: local('Vazir'), url(./fonts/Vazir.ttf) format('truetype');
+}
+@font-face {
+  font-family:'Aviny';
+  src: local('Aviny'), url(./fonts/Aviny.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'BYekan';
+  src: local('BYekan'), url(./fonts/BYekan.ttf) format('truetype');
+}
