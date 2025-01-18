@@ -1,11 +1,12 @@
 import React from 'react'
 import Products from './Products'
+import data from './data'
 
 function Content() {
   return (
     <div className='flex flex-col text-sm w-full md:max-2xl:basis-3/4 h-full bg-zinc-100'>
       <div className='flex flex-wrap space-y-3 sm:max-2xl:space-y-0 sm:max-2xl:mb-0 justify-between items-center p-3' dir='rtl'>
-        <p>تعداد محصولات : <span>6</span></p>
+        <p>تعداد محصولات : <span>{data.length}</span></p>
         
         <div className='flex flex-wrap items-center space-x-3 *:cursor-pointer' dir='rtl'>
           <p className='ml-3'>مرتب سازی بر اساس :  </p>
