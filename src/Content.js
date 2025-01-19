@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Products from './Products'
 import data from './data'
+import { target } from 'react-icons-kit/feather';
 
 function Content() {
+  
+  
+  const BrandsArray = []; 
+  
+  data.forEach((item) => {
+    if (!BrandsArray.includes(item.brand.toLowerCase())){
+      BrandsArray.push(item.brand.toLowerCase())
+    }
+  })
+  
+  const [BrandFilter, setBrandFilter] = useState('all');
+  const FilteredArray = BrandFilter === 'all' ? data : data.filter(item => item.brand.toLowerCase() === BrandFilter.toLowerCase());
+  
   return (
     <div className='flex flex-col text-sm w-full md:max-2xl:basis-3/4 h-full bg-zinc-100'>
       <div className='flex flex-wrap space-y-3 sm:max-2xl:space-y-0 sm:max-2xl:mb-0 justify-between items-center p-3' dir='rtl'>
@@ -11,23 +25,27 @@ function Content() {
         <div className='flex flex-wrap items-center space-x-3 *:cursor-pointer' dir='rtl'>
           <p className='ml-3'>مرتب سازی بر اساس :  </p>
           <label>جدید ترین</label>
-          <input className='w-4 h-4' type='radio' id='new' name='sortBy'/>
+          <input className='w-4 h-4' type='radio' id='new' value={'Asc'} name='sortBy'/>
           <label>قدیمی ترین</label>
-          <input className='w-4 h-4' type='radio' id='old' name='sortBy'/>
+          <input className='w-4 h-4' type='radio' id='old' value={'Desc'} name='sortBy'/>
         </div>
 
         <div className='flex flex-row ml-4 gap-2 items-center' dir='rtl'>
           <label for="selectBrands">برند ها</label>
-          <select className='rounded-md w-32 bg-indigo-50 text-indigo-900 shadow-md p-2 cursor-pointer text-xl' name='brands' id='selectBrands' style={{fontFamily:'Aviny'}}>
-            <option value={'nokia'}>نوکیا</option>
-            <option value={'apple'}>اپل</option>
-            <option value={'xiaomi'}>شیائومی</option>
-            <option value={'samsung'}>سامسونگ</option>
+          <select className='rounded-md w-32 bg-indigo-50 text-indigo-900 shadow-md p-2 cursor-pointer text-xl' name='brands' id='selectBrands' style={{fontFamily:'Aviny'}} onChange={(e)=>setBrandFilter(e.target.value)}>
+          <option value={'all'}>All</option>
+            {
+              BrandsArray.map((brand, index) => {
+                  return (
+                    <option key={index} value={brand}>{brand}</option>
+                  )
+              })
+            }
           </select>
         </div>
       </div>
 
-      <Products />
+      <Products FilteredArray={FilteredArray}/>
 
     </div>
   )
