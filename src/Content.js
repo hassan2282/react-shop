@@ -4,8 +4,8 @@ import data from './data'
 import { target } from 'react-icons-kit/feather';
 
 function Content() {
-  
-  
+  const [radioCheck, setRadioCheck] = useState('Asc');
+
   const BrandsArray = []; 
   
   data.forEach((item) => {
@@ -16,6 +16,7 @@ function Content() {
   
   const [BrandFilter, setBrandFilter] = useState('all');
   const FilteredArray = BrandFilter === 'all' ? data : data.filter(item => item.brand.toLowerCase() === BrandFilter.toLowerCase());
+  radioCheck === 'Asc' ?  FilteredArray.sort((a,b) => b.id - a.id) : FilteredArray.sort((a,b) => a.id - b.id);
   
   return (
     <div className='flex flex-col text-sm w-full md:max-2xl:basis-3/4 h-full bg-zinc-100'>
@@ -25,9 +26,9 @@ function Content() {
         <div className='flex flex-wrap items-center space-x-3 *:cursor-pointer' dir='rtl'>
           <p className='ml-3'>مرتب سازی بر اساس :  </p>
           <label>جدید ترین</label>
-          <input className='w-4 h-4' type='radio' id='new' value={'Asc'} name='sortBy'/>
+          <input className='w-4 h-4' type='radio' id='new' value={'Asc'} name='sortBy' onChange={(e)=>setRadioCheck(e.target.value)}/>
           <label>قدیمی ترین</label>
-          <input className='w-4 h-4' type='radio' id='old' value={'Desc'} name='sortBy'/>
+          <input className='w-4 h-4' type='radio' id='old' value={'Desc'} name='sortBy' onChange={(e)=>setRadioCheck(e.target.value)}/>
         </div>
 
         <div className='flex flex-row ml-4 gap-2 items-center' dir='rtl'>
