@@ -26,7 +26,7 @@ function Content() {
         <div className='flex flex-wrap items-center space-x-3 *:cursor-pointer' dir='rtl'>
           <p className='ml-3'>مرتب سازی بر اساس :  </p>
           <label>جدید ترین</label>
-          <input className='w-4 h-4' type='radio' id='new' checked value={'Asc'} name='sortBy' onChange={(e)=>setRadioCheck(e.target.value)}/>
+          <input className='w-4 h-4' type='radio' id='new' value={'Asc'} name='sortBy' onChange={(e)=>setRadioCheck(e.target.value)}/>
           <label>قدیمی ترین</label>
           <input className='w-4 h-4' type='radio' id='old' value={'Desc'} name='sortBy' onChange={(e)=>setRadioCheck(e.target.value)}/>
         </div>
