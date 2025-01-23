@@ -6,11 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import './fonts/Vazir.ttf';
 import './fonts/Aviny.ttf';
 import './fonts/BYekan.ttf';
+import { AppProvider } from './context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AppProvider>
+      <App />
+    </AppProvider>
   </React.StrictMode>
 );
 

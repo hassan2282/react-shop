@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Icon } from 'react-icons-kit'
 import { shoppingCart, plus } from 'react-icons-kit/feather'
+import { AppContext } from './context';
 
 function Product({item}) {
+
+  const {buy, setBuy} = useContext(AppContext);
 
   const [changeIcon, setChangeIcon] = useState(shoppingCart);
 
@@ -33,7 +36,7 @@ function Product({item}) {
         <div className='flex flex-wrap justify-between w-full items-center z-10'>
             <button className='p-2 text-sm bg-indigo-800 text-white rounded-md cursor-pointer hover:bg-red-600 hover:scale-95 duration-300'
              onMouseEnter={()=>setChangeIcon(plus)}
-             onMouseOut={()=>setChangeIcon(shoppingCart)}>
+             onMouseOut={()=>setChangeIcon(shoppingCart)} onClick={()=>setBuy([...buy, item])}>
                 <Icon icon={changeIcon} onMouseEnter={()=>setChangeIcon(plus)}/>
               </button>
             <p className='text-[70%]'>ریال <span>{separate(item.price)}</span></p>

@@ -3,6 +3,7 @@ import Product from './Product'
 import data from './data.js'
 
 function Products({FilteredArray}) {
+
   return (
     <div className='flex flex-wrap justify-center w-full relative'>
       {
