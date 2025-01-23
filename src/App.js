@@ -12,7 +12,7 @@ function App() {
         <Header />
       </div>
 
-      <div className='flex flex-row basis-11/12 w-full' style={{fontFamily:'Vazir'}}>
+      <div className='flex flex-row w-full' style={{fontFamily:'Vazir'}}>
         <Sidebar />
         <Content />
       </div>

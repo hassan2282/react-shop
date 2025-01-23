@@ -5,9 +5,9 @@ import Purchase from './Purchase.js';
 
 function Sidebar() {
   return (
-    <div className='flex flex-col relative basis-0 md:max-2xl:basis-1/4 h-full bg-indigo-100 overflow-hidden justify-start items-center'>
+    <div className='flex flex-col relative max-md:basis-0 basis-1/4 h-full bg-indigo-100 overflow-hidden justify-start items-center'>
       <div className='flex flex-col items-end w-full'>
-      <h3 className='text-[12px] m-2 mb-5 z-10'>شما <span >3</span> محصول در سبد خرید خود دارید</h3>
+        <h3 className='text-[12px] m-2 mb-5 z-10'>شما <span >3</span> محصول در سبد خرید خود دارید</h3>
       </div>
       <Purchase />
       <Purchase />

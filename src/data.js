@@ -84,6 +84,27 @@ const data = [
         brand: 'Samsung',
         price: 4540000,
     },
+    {
+        id : 13,
+        url : '13.jpg',
+        name : 'S98 pro',
+        brand: 'Dodge',
+        price: 4543340000,
+    },
+    {
+        id : 14,
+        url : '14.jpg',
+        name : 'nokia v2',
+        brand: 'nokia',
+        price: 99000000,
+    },
+    {
+        id : 15,
+        url : '15.jpg',
+        name : 'xiaomi f3',
+        brand: 'Xiaomi',
+        price: 15000000,
+    },
 ]
 
 export default data;

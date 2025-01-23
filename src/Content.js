@@ -19,14 +19,14 @@ function Content() {
   radioCheck === 'Asc' ?  FilteredArray.sort((a,b) => b.id - a.id) : FilteredArray.sort((a,b) => a.id - b.id);
   
   return (
-    <div className='flex flex-col text-sm w-full md:max-2xl:basis-3/4 h-full bg-zinc-100'>
+    <div className='flex flex-col text-sm w-full h-full bg-zinc-100'>
       <div className='flex flex-wrap space-y-3 sm:max-2xl:space-y-0 sm:max-2xl:mb-0 justify-between items-center p-3' dir='rtl'>
         <p>تعداد محصولات : <span>{data.length}</span></p>
         
         <div className='flex flex-wrap items-center space-x-3 *:cursor-pointer' dir='rtl'>
           <p className='ml-3'>مرتب سازی بر اساس :  </p>
           <label>جدید ترین</label>
-          <input className='w-4 h-4' type='radio' id='new' value={'Asc'} name='sortBy' onChange={(e)=>setRadioCheck(e.target.value)}/>
+          <input className='w-4 h-4' type='radio' id='new' checked value={'Asc'} name='sortBy' onChange={(e)=>setRadioCheck(e.target.value)}/>
           <label>قدیمی ترین</label>
           <input className='w-4 h-4' type='radio' id='old' value={'Desc'} name='sortBy' onChange={(e)=>setRadioCheck(e.target.value)}/>
         </div>
