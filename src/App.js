@@ -4,6 +4,8 @@ import { home } from 'react-icons-kit/feather'
 import Header from './Header';
 import Content from './Content';
 import Sidebar from './Sidebar';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
         <Sidebar />
         <Content />
       </div>
-
+      <ToastContainer />
     </div>
   );
 }

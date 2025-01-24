@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import lottieAnimation from "./lotties/shapes.json";
 import Lottie from "lottie-react";
 import Purchase from './Purchase.js';
@@ -7,6 +7,15 @@ import { AppContext } from './context.js';
 function Sidebar() {
 
   const {buy, setBuy} = useContext(AppContext);
+
+  useEffect(()=> {
+    localStorage.setItem('data', JSON.stringify(buy))
+  },[buy])
+
+  useEffect(() => {
+    const localData = JSON.parse(localStorage.getItem('data'));
+    localData && setBuy(localData)
+  }, [setBuy])
 
   return (
     <div className='flex flex-col max-md:basis-0 basis-1/4 h-auto bg-indigo-100 overflow-hidden justify-start items-center'>
