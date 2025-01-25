@@ -6,7 +6,6 @@ import Content from './Content';
 import Sidebar from './Sidebar';
 import { ToastContainer, toast } from 'react-toastify';
 
-
 function App() {
   return (
     <div className='flex flex-col items-center bg-[#F5EFE7] h-screen w-full'>

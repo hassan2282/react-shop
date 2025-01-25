@@ -22,7 +22,7 @@ function Sidebar() {
       <div className='flex flex-col items-end w-full'>
         {
           buy.length > 0 ?
-          <h3 className='text-[12px] m-2 mb-5 z-10'>شما <span >3</span> محصول در سبد خرید خود دارید</h3>
+          <h3 className='text-[12px] m-2 mb-5 z-10'>شما <span >{buy.length}</span> محصول در سبد خرید خود دارید</h3>
           :
           <h3 className='text-[12px] m-2 mb-5 z-10'> سبد خرید شما سرشار از پوچ هست</h3>
         }
