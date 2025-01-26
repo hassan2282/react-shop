@@ -28,8 +28,7 @@ function Purchase({ item }) {
                 <button
                     className='bg-rose-600 hover:scale-95 cursor-pointer duration-200 text-white p-[1px] rounded-md text-[10px]'
                     onClick={handleFilter}
-                >
-                    حذف از سبد
+                >حذف از سبد
                 </button>
             </div>
         </div>
