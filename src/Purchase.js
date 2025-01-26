@@ -24,12 +24,11 @@ function Purchase({ item }) {
                 <div className='flex flex-row items-center justify-center'>
                     <span className='text-[8px]'>{item.price} تومان</span>
                     <span className='bg-indigo-50 text-[10px] rounded-full text-center flex p-1'>1 عدد</span>
-                </div>
+                </div>  
                 <button
                     className='bg-rose-600 hover:scale-95 cursor-pointer duration-200 text-white p-[1px] rounded-md text-[10px]'
                     onClick={handleFilter}
-                >حذف از سبد
-                </button>
+                >حذف از سبد</button>
             </div>
         </div>
     );
