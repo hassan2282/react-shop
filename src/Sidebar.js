@@ -27,14 +27,14 @@ function Sidebar() {
           <h3 className='text-[12px] m-2 mb-5 z-10'> سبد خرید شما سرشار از پوچ هست</h3>
         }
       </div>
-      {
-        buy.length > 0 &&
-        buy.map((item) => {
-          return (
-            <Purchase key={item.id} item={item}/>
-          )
-        }) 
-      }
+        {
+          buy.length > 0 &&
+          buy.map((item) => {
+            return (
+              <Purchase key={item.id} item={item}/>
+            )
+          }) 
+        }
         <Lottie animationData={lottieAnimation} className='absolute hue-rotate-60 scale-150 z-0 h-full'/>
     </div>
   )
