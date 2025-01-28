@@ -26,6 +26,7 @@ function Sidebar() {
           :
           <h3 className='text-[12px] m-2 mb-5 z-10'> سبد خرید شما سرشار از پوچ هست</h3>
         }
+        
       </div>
         {
           buy.length > 0 &&
