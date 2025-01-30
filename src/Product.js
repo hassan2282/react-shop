@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Icon } from 'react-icons-kit'
 import { shoppingCart, plus } from 'react-icons-kit/feather'
 import { AppContext } from './context';
@@ -11,8 +11,14 @@ function Product({item}) {
 
   const [changeIcon, setChangeIcon] = useState(shoppingCart);
 
+  const [animate, setAnimate] = useState(false)
+
+  useEffect(()=>{
+    setInterval(()=>setAnimate(true), 200)
+  })
+
   return (
-    <div className='flex relative flex-col items-center sm:w-[45%] md:max-2xl:w-[30%] hover:scale-105 cursor-pointer hover:shadow-xl hover:-translate-y-2 duration-300 p-2 space-y-4 m-[3px] lg:max-2xl:m-3 bg-white rounded-sm shadow overflow-hidden' dir='rtl'>
+    <div className={` flex relative flex-col ${animate === true ? 'opacity-100 translate-y-0 duration-500' : 'opacity-0 translate-y-20 duration-500'} items-center sm:w-[45%] md:max-2xl:w-[30%] hover:scale-105 cursor-pointer hover:shadow-xl hover:-translate-y-2 duration-300 p-2 space-y-4 m-[3px] lg:max-2xl:m-3 bg-white rounded-sm shadow overflow-hidden`} dir='rtl'>
         <img className='absolute w-full h-full rounded-md filter blur-2xl opacity-40 z-0' src={require(`./images/${item.url}`)} />
         <div className='w-full h-[60%] z-10'>
             <img className='w-full h-full rounded-md' src={require(`./images/${item.url}`)} />
