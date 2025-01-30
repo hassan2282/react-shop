@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AppContext } from './context';
+import formatCurrency from './formatCurrency';
 
 function Purchase({ item }) {
     const { buy, setBuy } = useContext(AppContext);
@@ -22,7 +23,7 @@ function Purchase({ item }) {
 
             <div className='flex flex-col gap-1'>
                 <div className='flex flex-row items-center justify-center'>
-                    <span className='text-[8px]'>{item.price} تومان</span>
+                    <span className='text-[8px]'>{formatCurrency(item.price)}</span>
                     <span className='bg-indigo-50 text-[10px] rounded-full text-center flex p-1'>1 عدد</span>
                 </div>  
                 <button

@@ -3,6 +3,7 @@ import { Icon } from 'react-icons-kit'
 import { shoppingCart, plus } from 'react-icons-kit/feather'
 import { AppContext } from './context';
 import { ToastContainer, toast } from 'react-toastify';
+import formatCurrency from './formatCurrency';
 
 function Product({item}) {
 
@@ -10,18 +11,6 @@ function Product({item}) {
 
   const [changeIcon, setChangeIcon] = useState(shoppingCart);
 
-  function separate(Number) 
-{
-  Number+= '';
-  Number= Number.replace(',', '');
-  let x = Number.split('.');
-  let y = x[0];
-  let z= x.length > 1 ? '.' + x[1] : '';
-  var rgx = /(\d+)(\d{3})/;
-  while (rgx.test(y))
-  y= y.replace(rgx, '$1' + ',' + '$2');
-  return y+ z;
-}
   return (
     <div className='flex relative flex-col items-center sm:w-[45%] md:max-2xl:w-[30%] hover:scale-105 cursor-pointer hover:shadow-xl hover:-translate-y-2 duration-300 p-2 space-y-4 m-[3px] lg:max-2xl:m-3 bg-white rounded-sm shadow overflow-hidden' dir='rtl'>
         <img className='absolute w-full h-full rounded-md filter blur-2xl opacity-40 z-0' src={require(`./images/${item.url}`)} />
@@ -52,7 +41,7 @@ function Product({item}) {
               });}}>
                 <Icon icon={changeIcon} onMouseEnter={()=>setChangeIcon(plus)}/>
               </button>
-            <p className='text-[70%]'>ریال <span>{separate(item.price)}</span></p>
+            <p className='text-[70%]'><span>{formatCurrency(item.price)}</span></p>
         </div>
     </div>
   )
